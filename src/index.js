@@ -1,7 +1,8 @@
 import app from "./app";
 
 const main = () => {
-    app.listen(3000, console.log("En http://localhost:3000"))
+    app.set('port', process.env.PORT || 3000)
+    app.listen(app.get('port'), console.log("On http://localhost:"+app.get('port')))
 }
 
 main();
